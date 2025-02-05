@@ -6,9 +6,10 @@
     transition: all 0.3s ease-in-out;
     min-width: 280px;
     min-height: 180px; 
-    margin-top: 15px;/* Adjusted for better content flow */
+    margin: 15px;/* Adjusted for better content flow */
     text-align: center;
     overflow: hidden;
+    backdrop-filter: blur(15px); /* Frosted glass effect */
     border: 1px solid rgba(0, 0, 0, 0.08);
   }
   

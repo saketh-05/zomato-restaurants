@@ -1,32 +1,56 @@
-import restaurantById from "../api";
+import { restaurantById, restaurantByName } from "../api";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 
+
 function Home() {
-  const [id, setId] = useState("");
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
   const [restaurantData, setRestaurantData] = useState([]);
   const [showCard, setShowCard] = useState(false);
+
+  // Function to handle input change
   const inputID = (e) => {
-    setId(e.target.value);
-    console.log(id);
+    setInput(e.target.value);
+    console.log(input);
   };
+
+  // Function to search restaurant by ID or Name
   const searchRestaurantById = async () => {
     try {
-      let pattern = /^[0-9]+$/;
-      if (!pattern.test(id)) {
-        alert("Please enter a valid Restaurant ID");
+      let patternID = /^[0-9]+$/;
+      const patternName = /^[A-Za-z0-9&'-. ]+$/;
+      let data = {};
+
+      if (patternID.test(input)) {
+        console.log("Input is a number (ID) - ", input);
+        data = await restaurantById(input);
+      } else if (patternName.test(input)) {
+        console.log("Input is a Name - ", input);
+        data = await restaurantByName(input);
+      } else {
+        alert("Invalid input. Please enter a valid Restaurant ID or Name.");
         return;
       }
-      const data = await restaurantById(id);
-      console.log(data["Restaurant Data"]);
+
+      console.log("This is the restaurant data - ", data["Restaurant Data"]);
+
+      if (!data["Restaurant Data"] || data.error) {
+        alert("No restaurant found with the given ID");
+        return;
+      }
+
       setRestaurantData(data["Restaurant Data"]);
       setShowCard(true);
-      console.log(data);
     } catch (error) {
       console.error(error);
+      alert("An error occurred while searching for the restaurant");
+      navigate("/");
     }
   };
+
   return (
     <>
       <div className='home'>
@@ -43,13 +67,13 @@ function Home() {
         </div>
         <div className='home_search'>
           <p className='home_restaurant_by_id'>
-            Enter the Restaurant ID below to search for a specific restaurant.
+            Enter the Restaurant ID or Name below to search for a specific restaurant.
           </p>
           <div className='search_by_id_container flex gap-3'>
             <input
               type='text'
-              placeholder='Search for a restaurant by ID...'
-              className='restaurant_search_by_id p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out opacity-50 place-content-start placeholder-amber-100 min-w-75'
+              placeholder='Search for a restaurant by ID or Name...'
+              className='restaurant_search_by_id'
               onChange={inputID}
             />
             <button
@@ -60,18 +84,10 @@ function Home() {
             </button>
           </div>
         </div>
-        {showCard && (
-          <RestaurantCard
-            name={restaurantData["Restaurant Name"]}
-            rating={restaurantData["Aggregate rating"]}
-            ratingText={restaurantData["Rating text"]}
-            locality={restaurantData["Locality"]}
-            cuisines={restaurantData["Cuisines"]}
-          />
-        )}
+        {showCard && <RestaurantCard restaurantData={restaurantData} />}
       </div>
     </>
   );
-}
+  }
 
-export default Home;
+  export default Home;

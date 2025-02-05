@@ -1,0 +1,168 @@
+/* Main Container */
+.location_search {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Heading Text */
+  .location_restaurant_container {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Input & Button Container */
+  .search_by_loc_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  /* Labels for Latitude & Longitude */
+  .search_latitude,
+  .search_longitude {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Input Fields */
+  .input_latitude,
+  .input_longitude {
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input Hover & Focus Effects */
+  .input_latitude:hover,
+  .input_longitude:hover,
+  .input_latitude:focus,
+  .input_longitude:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Search Button */
+  .search_by_loc_button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Button Hover Effect */
+  .search_by_loc_button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* Restaurant Card Container */
+  .restaurant_card_container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+
+/* 🌟 Mobile Devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    .location_search {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    .search_by_loc_container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .input_latitude,
+    .input_longitude {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    .search_by_loc_button {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+  
+  /* 🌟 Tablets & Small Laptops (601px - 1024px) */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .location_search {
+      max-width: 80%;
+      padding: 25px;
+    }
+  
+    .search_by_loc_container {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  
+    .input_latitude,
+    .input_longitude {
+      width: 250px;
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .search_by_loc_button {
+      font-size: 16px;
+      padding: 12px 16px;
+    }
+  }
+  
+  /* 🌟 Large Screens & Desktops (1025px and above) */
+  @media screen and (min-width: 1025px) {
+    .location_search {
+      max-width: 60%;
+      padding: 30px;
+    }
+  
+    .search_by_loc_container {
+      flex-wrap: nowrap;
+      gap: 15px;
+    }
+  
+    .input_latitude,
+    .input_longitude {
+      width: 200px;
+      font-size: 16px;
+    }
+  
+    .search_by_loc_button {
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+  }
+  

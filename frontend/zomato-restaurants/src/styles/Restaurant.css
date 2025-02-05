@@ -1,0 +1,74 @@
+.restaurant-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+  }
+  
+  .restaurant-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .restaurant-details h1 {
+    font-size: 32px;
+    margin: 15px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .rating {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+
+  .cuisines, .address, .price, .rating-votes, .country-code, .location {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  
+  .loader {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 50px;
+    font-weight: bold;
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 20px;
+    color: #ff4d4d;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width:400px) {
+    .restaurant-container {
+      padding: 20px;
+    }
+  
+    .restaurant-details h1 {
+      font-size: 24px;
+    }
+  
+    .rating {
+      font-size: 18px;
+    }
+  
+    .cuisines, .address, .price, .rating-votes, .country-code, .location {
+      font-size: 16px;
+    }
+  }

@@ -1,0 +1,50 @@
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* Apply a backdrop blur to create the frosted effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+.navbar_links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.navbar_container a {
+  text-decoration: none;
+  color: rgb(181, 234, 225);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 10px;
+}
+.navbar_container a:hover {
+  color:aliceblue;
+  transition: 0.3s;
+  animation: shake 0.5s ease infinite alternate forwards ;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg) scaleX(1.2); 
+  }
+  50% {
+    transform: rotate(-2deg) scaleY(1.2);
+  }
+  75% {
+    transform: rotate(2deg) scaleX(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scaleY(1.2);
+  }
+}

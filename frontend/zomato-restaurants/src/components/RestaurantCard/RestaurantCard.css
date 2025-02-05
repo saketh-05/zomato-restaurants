@@ -1,0 +1,76 @@
+.restaurant-card {
+    background-color: #efaaaa;
+    border-radius: 16px; /* Slightly larger, more modern */
+    padding: 14px; /* Increased padding for better spacing */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); /* Softer, wider shadow */
+    transition: all 0.3s ease-in-out;
+    min-width: 280px;
+    min-height: 180px; 
+    margin-top: 15px;/* Adjusted for better content flow */
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .restaurant-card:hover {
+    transform: scale(1.03); /* Subtle scale on hover */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+  }
+  
+  .restaurant-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .restaurant-card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #110101;
+  }
+  
+  .restaurant-card-locality {
+    font-size: 1rem;
+    color: #5a5858;
+  }
+  
+  .restaurant-card-cuisines {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #383434;
+  }
+  .restaurant-card-rating {
+    background: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+  
+  .restaurant-card-rating span{
+    margin-left: 15px;
+  }
+  .restaurant-card-rating::before {
+    content: '★';
+    margin-left: 4px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .restaurant-card {
+      max-width: 95%;
+      padding: 16px;
+    }
+  
+    .restaurant-card-title {
+      font-size: 1.4rem;
+    }
+  
+    .restaurant-card-rating {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  }

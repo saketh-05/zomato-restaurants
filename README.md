@@ -30,6 +30,12 @@ If time allows, implement the following additional features, ensuring they are s
 
 # Project Guide to Test
 
+## Functionalities implemented
+- Restaurant Search by ID
+- Restaurant Search by Name
+- Restaurant Search by Location
+- Restaurants List with pagination
+
 ## Prerequisites
 Before running the project, ensure you have the following installed:
 - ✅ Node.js (Download: https://nodejs.org/)

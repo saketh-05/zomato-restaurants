@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { restaurantsList } from "../api";
-import { useNavigate } from "react-router-dom";
 import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 import "../styles/RestaurantsList.css";
 
 function RestaurantsList() {
-  const navigate = useNavigate();
   const [restaurantList, setRestaurantList] = useState(null);
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
   const numPerPage = 10;
-  try {
-    const sanitizeRestaurantsData = (restaurants) => {
+  
+  const sanitizeRestaurantsData = (restaurants) => {
       return restaurants.map((restaurant) => ({
         "Restaurant ID": restaurant["Restaurant ID"] ?? 0, // Ensure ID is present
         "Restaurant Name": restaurant["Restaurant Name"] ?? "Unknown",
@@ -105,10 +103,7 @@ function RestaurantsList() {
       console.log("updating page to - ", pageNum);
       setPage(pageNum);
     };
-  } catch (err) {
-    console.error("Error occured - ", err);
-    navigate("/");
-  }
+
   if (!restaurantList) return <h1>Loading...</h1>;
 
   return (

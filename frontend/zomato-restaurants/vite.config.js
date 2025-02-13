@@ -13,6 +13,7 @@ export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
     server: {
+      host: "0.0.0.0",
       proxy: {
         "/api": {
           target: process.env.API_PROXY_URL,

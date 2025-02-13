@@ -1,7 +1,7 @@
 // Importing necessary components and pages
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import LocationSearch from "./pages/locationSearch";
+import Home from "./pages/Home";
+import LocationSearch from "./pages/LocationSearch";
 import RestaurantsList from "./pages/RestaurantsList";
 import Restaurant from "./pages/Restaurant";
 import Navbar from "./components/Navbar/Navbar";

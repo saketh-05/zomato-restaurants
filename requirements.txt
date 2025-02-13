@@ -1,5 +1,4 @@
 fastapi
 uvicorn
-kagglehub
-pymongo
-pandas
+python-dotenv
+motor

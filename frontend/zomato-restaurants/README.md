@@ -1,8 +1,33 @@
-# React + Vite
+# Project Guide to Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Functionalities implemented
+- Restaurant Search by ID
+- Restaurant Search by Name
+- Restaurant Search by Location
+- Restaurants List with pagination
 
-Currently, two official plugins are available:
+## Prerequisites
+Before running the project, ensure you have the following installed:
+- ✅ Node.js (Download: https://nodejs.org/)
+- ✅ npm or yarn (Comes with Node.js)
+- ✅ MongoDB/PostgreSQL (if using a database)
+- ✅ Git (optional, for cloning the project)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 2. Running the Backend (API Service)
+### 1️⃣ Clone the Repository
+- git clone https://github.com/industry-ready-2026/webapp-saketh-05.git
+- cd backend
+### 2️⃣ Install Dependencies
+- pip install -r requirements.txt
+
+### 3️⃣ Start Backend Server
+- uvicorn server:app --reload
+
+## 3. Running the Frontend (UI)
+### 1️⃣ Open a new terminal to run frontend 
+### 2️⃣ Go to frontend folder
+- cd frontend/zomato-restaurants
+### 3️⃣ Install Dependencies
+- npm install
+## 4️⃣ Run the frontend server
+- npm run dev

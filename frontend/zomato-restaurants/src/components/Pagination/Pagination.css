@@ -1,0 +1,18 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: azure;
+    color : black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 4px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }

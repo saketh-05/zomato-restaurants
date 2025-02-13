@@ -1,74 +1,148 @@
 .restaurant-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px); /* Frosted glass effect */
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-    color: white;
-  }
-  
-  .restaurant-image {
+  max-width: 75vw;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: white;
+}
+
+.restaurant-container-image {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.2);
   }
+.restaurant-container-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.restaurant-container-info-name-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(233, 64, 109);
+  padding: 20px;
+  border-radius: 15px;
+  color: rgb(23, 5, 2);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.restaurant-container-info-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3f0303;
+}
+.restaurant-container-info-rating {
+  background: #4ca5af;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.restaurant-container-info-votes {
+  font-size: 1rem;
+  color: #fff;
+  background: #4ca5af;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-weight: 600;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.restaurant-container-cuisines {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2b2222;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+.restaurant-container-avgcost {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #eef1b3;
+}
+.restaurant-container-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(247, 215, 215, 0.15); /* Glassmorphism effect */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: rgb(252, 236, 236);
   
+}
+.restaurant-container-location-address {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f2d1d1;
+}
+.restaurant-container-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.restaurant-container-menu-container a {
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #f2d1d1;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Roboto Mono';
+}
+.restaurant-container-menu-container a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.restaurant-container-menu-container a:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+.restaurant-container-menu-container a:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+.restaurant-container-menu-container a:visited {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 400px) {
+  .restaurant-container {
+    padding: 20px;
+  }
+
   .restaurant-details h1 {
-    font-size: 32px;
-    margin: 15px 0;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 24px;
   }
-  
+
   .rating {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffcc00;
-  }
-
-  .cuisines, .address, .price, .rating-votes, .country-code, .location {
     font-size: 18px;
-    margin: 10px 0;
-    font-weight: 500;
-    opacity: 0.9;
-  }
-  
-  .loader {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 50px;
-    font-weight: bold;
-  }
-  
-  .error {
-    text-align: center;
-    font-size: 20px;
-    color: #ff4d4d;
-    font-weight: bold;
   }
 
-  @media screen and (max-width:400px) {
-    .restaurant-container {
-      padding: 20px;
-    }
-  
-    .restaurant-details h1 {
-      font-size: 24px;
-    }
-  
-    .rating {
-      font-size: 18px;
-    }
-  
-    .cuisines, .address, .price, .rating-votes, .country-code, .location {
-      font-size: 16px;
-    }
+  .cuisines,
+  .address,
+  .price,
+  .rating-votes,
+  .country-code,
+  .location {
+    font-size: 16px;
   }
+}

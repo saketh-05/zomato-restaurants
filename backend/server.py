@@ -20,7 +20,7 @@ total_count_located = 0
 #set cors policy to allow frontend to access the data
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Adjust based on frontend origin
+    allow_origins=[{os.getenv("FRONTEND_URL")}],  # Adjust based on frontend origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers, including "Content-Type"

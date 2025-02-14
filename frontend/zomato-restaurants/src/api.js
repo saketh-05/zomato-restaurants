@@ -2,7 +2,7 @@ const apiUrl = import.meta.env.VITE_API_PROXY_URL;
 
 export async function restaurantById(id) {
   try {
-    const response = await fetch(`${apiUrl}/restaurant/${id}`);
+    const response = await fetch(`${apiUrl}/api/restaurant/${id}`);
     const data = await response.json();
     // console.log("Data from id in api.js - ",data); //need to remove
     return data;
@@ -13,7 +13,7 @@ export async function restaurantById(id) {
 
 export async function restaurantByName(name) {
   try {
-    const response = await fetch(`${apiUrl}/restaurant/name/${name}`);
+    const response = await fetch(`${apiUrl}/api/restaurant/name/${name}`);
     const data = await response.json();
     // console.log("Data from name in api.js",data); //need to remove
     return data;
@@ -27,7 +27,7 @@ export async function restaurantsList(page, limit) {
   limit = limit || 10;
   try {
     const response = await fetch(
-      `${apiUrl}/restaurants?page=${page}&limit=${limit}`,
+      `${apiUrl}/api/restaurants?page=${page}&limit=${limit}`,
       {
         method: "GET",
         headers: {
@@ -46,7 +46,7 @@ export async function restaurantsList(page, limit) {
 export async function searchByLocation(latitude, longitude, page) {
   try {
     const response = await fetch(
-      `${apiUrl}/restaurants/location?latitude=${latitude}&longitude=${longitude}&page=${page}`,
+      `${apiUrl}/api/restaurants/location?latitude=${latitude}&longitude=${longitude}&page=${page}`,
       {
         method: "GET",
         headers: {

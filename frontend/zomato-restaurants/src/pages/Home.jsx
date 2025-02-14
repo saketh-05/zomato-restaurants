@@ -39,8 +39,8 @@ function Home() {
       console.log("This is the restaurant data - ", data["restaurantData"]); //need to remove
 
       if (!data["restaurantData"] || data.error || data.message) {
-        console.log("No restaurant found with the given ID", data); //need to remove
-        alert("No restaurant found with the given ID");
+        console.log("No restaurant found with the given ID/Name", data); //need to remove
+        alert("No restaurant found with the given ID/Name");
         return;
       }
 

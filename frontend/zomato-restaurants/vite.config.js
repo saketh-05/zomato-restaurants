@@ -14,7 +14,7 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss()],
     server: {
       host: "0.0.0.0",
-      allowedHosts: ["all"],
+      allowedHosts: ["zomato-pirates.onrender.com", "localhost", "0.0.0.0"]
       // proxy: {
       //   "/api": {
       //     target: process.env.API_PROXY_URL,

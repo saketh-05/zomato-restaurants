@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
-# import json
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -141,6 +140,7 @@ async def read_restaurants_data_using_location(
             total_count_located = math.ceil(count/10)
             restaurant_data = restaurants_data[0:10]
             print("Total count located", total_count_located, "Total count", count)
+            
         else:
             skip = max((page - 1) * 10, 0)
             restaurants_data = await collection.find(
@@ -164,10 +164,11 @@ async def read_restaurants_data_using_location(
         for r in restaurant_data:
             if r["restaurant"]["id"] not in unique_res_data:
                 res_data.append(r)
+                print(type(unique_res_data))
                 unique_res_data.add(r["restaurant"]["id"]) 
         
         if page == total_count_located: 
-            unique_res_data = {} 
+            unique_res_data = set()
             total_count_located = 0
             
         if len(res_data) > 0 : return {"restaurantData": res_data, "totalRestaurants": count}

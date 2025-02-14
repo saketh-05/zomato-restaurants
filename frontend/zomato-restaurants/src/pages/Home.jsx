@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 
+
 function Home() {
   const navigate = useNavigate();
   let [input, setInput] = useState("");

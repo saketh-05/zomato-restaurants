@@ -7,14 +7,14 @@ import path from "path";
 const envPath = path.resolve(__dirname, "../../");
 // Load the .env file from the root folder
 dotenv.config({ path: path.join(envPath, ".env") });
-dotenv.config({ path: path.join(envPath, ".env.development") });
+// dotenv.config({ path: path.join(envPath, ".env.development") });
 
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
     server: {
       host: "0.0.0.0",
-      allowedHosts: ['zomato-restaurants-frontend.onrender.com'],
+      allowedHosts: ["all"],
       proxy: {
         "/api": {
           target: process.env.API_PROXY_URL,

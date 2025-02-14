@@ -15,12 +15,12 @@ export default defineConfig(() => {
     server: {
       host: "0.0.0.0",
       allowedHosts: ["all"],
-      proxy: {
-        "/api": {
-          target: process.env.API_PROXY_URL,
-          changeOrigin: true,
-        },
-      },
+      // proxy: {
+      //   "/api": {
+      //     target: process.env.API_PROXY_URL,
+      //     changeOrigin: true,
+      //   },
+      // },
     },
   };
 });
